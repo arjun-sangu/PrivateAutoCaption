@@ -3,19 +3,22 @@
 import os
 import logging
 import pyrogram
-from config import Config  
 
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+API_ID = int(os.environ.get("APP_ID", 12345))
+API_HASH = os.environ.get("API_HASH", "")
+    
 
 if __name__ == "__main__" :
     plugins = dict(
         root="mt_privateautocaption"
     )
-    MoTech = pyrogram.Client(
+    CapBot = pyrogram.Client(
         "CaptionBot",
-        bot_token=Config.MT_BOT_TOKEN,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
+        bot_token=BOT_TOKEN,
+        api_id=API_ID,
+        api_hash=API_HASH,
         plugins=plugins,
         workers=300
     )
-    MoTech.run()
+    CapBot.run()

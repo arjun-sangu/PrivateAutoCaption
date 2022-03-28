@@ -11,6 +11,13 @@ CAPTION_TEXT = os.environ.get("CAPTION", "@MALLU_ROKERS")
 BUTTON_TEXT = os.environ.get("BUTTON", "🔻Join Channel🔻")
 URL_LINK = os.environ.get("LINK", "T.ME/MO_TECH_YT")
   
+@Client.on_message(filters.private & filters.command("start"))
+async def start(client, update):
+    text = f"""✅ Hey I'm Alive"""
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+  )
 
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):

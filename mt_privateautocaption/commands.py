@@ -3,7 +3,6 @@
 # (C) PR0FESSOR-99
 
 import os
-from config import Config
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 

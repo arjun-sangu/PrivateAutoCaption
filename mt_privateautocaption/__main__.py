@@ -22,7 +22,8 @@ async def start(client, update):
 @Client.on_message(filters.media & filters.channel)
 async def caption(client, message: Message):
     kopp, _ = get_file_id(message)
-    await message.edit(f"`{kopp.file_name}`",
+    Thyr = kopp.file_name.replace("_", " ").replace(".", " ")
+    await message.edit(f"`{Thyr}`",
           #reply_markup=InlineKeyboardMarkup(
              # [[
              # InlineKeyboardButton(f"{BUTTON_TEXT}", url=f"{URL_LINK}")
